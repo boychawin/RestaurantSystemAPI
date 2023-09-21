@@ -96,8 +96,7 @@ type Order struct {
 	ID        uint
 	BillID    int
 	ProductID int
-	Quantity  int
-	Status    OrderStatus // Default value is "รอยืนยัน"
+	Status    OrderStatus
 }
 
 type Membership struct {

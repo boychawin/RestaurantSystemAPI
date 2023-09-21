@@ -22,7 +22,7 @@ func (u usersRepositoryDB) PostBills(c *fiber.Ctx) (*ResponseBill, error) {
 	if request.TableID == 0 || request.Number == 0 || request.AgeGroupStart == 0 || request.AgeGroupEnd == 0 || request.Gender == "" {
 		return nil, errors.NewUnexpectedError("ต้องระบุฟิลด์ให้ครบ")
 	}
-
+	request.Status = models.StatusOpenBill
 	// Insert
 	tx := u.db.Create(&request)
 	if tx.Error != nil {

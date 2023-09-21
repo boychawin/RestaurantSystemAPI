@@ -19,7 +19,7 @@ func (u usersRepositoryDB) PostOrders(c *fiber.Ctx) (*ResponseOrder, error) {
 		return nil, err
 	}
 
-	if request.BillID == 0 || request.ProductID == 0  || request.Quantity == 0  {
+	if request.BillID == 0 || request.ProductID == 0  {
 		return nil, errors.NewUnexpectedError("ต้องระบุฟิลด์ให้ครบ")
 	}
 	request.Status = models.StatusPending

@@ -137,7 +137,7 @@ func (u usersRepositoryDB) GetBillsCheck(c *fiber.Ctx) (*ResponseBillCheck, erro
 	var totalAmount float64
 	var totaldiscount float64
 
-	u.db.Raw("SELECT SUM(quantity) as total_quantity FROM orders WHERE bill_id = ?", billID).Scan(&totalQuantity)
+	u.db.Raw("SELECT SUM(products.price) as total_quantity FROM orders JOIN products ON orders.product_id = products.id WHERE orders.bill_id = ?", billID).Scan(&totalQuantity)
 	if totalQuantity != 0 {
 		// Update
 		tx := u.db.Model(&models.Bill{}).Where("id = ?", billID).Updates(&models.Bill{AmountPaid: totalQuantity})
