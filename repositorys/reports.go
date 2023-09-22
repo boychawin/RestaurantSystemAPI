@@ -31,7 +31,7 @@ func (u usersRepositoryDB) GetTotalAmountIncome(c *fiber.Ctx) (*ResponseReport, 
 			Table("orders").
 			Select("SUM(products.price) as total_revenue").
 			Joins("JOIN products ON orders.product_id = products.id").
-			Where("orders.created_at >= ?", tp.StartDate).
+			Where("orders.status LIKE 'เสริฟอาหาร' AND orders.created_at >= ?", tp.StartDate).
 			Row().
 			Scan(tp.Field)
 
@@ -77,7 +77,7 @@ func (u usersRepositoryDB) GetProductCategory(c *fiber.Ctx) (*ResponseReportCate
 				Select("SUM(products.price) as total_revenue").
 				Joins("JOIN products ON orders.product_id = products.id").
 				Where("products.category_id = ?", category.ID).
-				Where("orders.created_at >= ?", tp.StartDate).
+				Where("orders.status LIKE 'เสริฟอาหาร' AND orders.created_at >= ?", tp.StartDate).
 				Row().
 				Scan(tp.Field)
 
@@ -124,6 +124,7 @@ func (u usersRepositoryDB) GetBillCategorySummary(c *fiber.Ctx) (*ResponseReport
 				Table("bills").
 				Joins("JOIN orders ON bills.id = orders.bill_id").
 				Joins("JOIN products ON orders.product_id = products.id").
+				Where("bills.status LIKE 'ปิด'").
 				Where("products.category_id = ?", category.ID).
 				Where("bills.created_at >= ?", tp.StartDate).
 				Count(tp.Field).Error
@@ -160,8 +161,7 @@ func (u usersRepositoryDB) GetBillSummary(c *fiber.Ctx) (*ResponseReportBillCoun
 	for _, tp := range timePeriods {
 		err := u.db.
 			Table("bills").
-			Joins("JOIN orders ON bills.id = orders.bill_id").
-			Joins("JOIN products ON orders.product_id = products.id").
+			Where("bills.status LIKE 'ปิด'").
 			Where("bills.created_at >= ?", tp.StartDate).
 			Count(tp.Field).Error
 
@@ -178,8 +178,8 @@ func (u usersRepositoryDB) GetBillSummary(c *fiber.Ctx) (*ResponseReportBillCoun
 
 }
 
-func (u usersRepositoryDB) GetCustomerSummary(c *fiber.Ctx) (*ResponseReportBillCount, error) {
-	var customerCountResponse BillCount
+func (u usersRepositoryDB) GetCustomerSummary(c *fiber.Ctx) (*ResponseReportCustomerCount, error) {
+	var customerCountResponse CustomerCount
 
 	timePeriods := []struct {
 		Field     *int64
@@ -192,20 +192,19 @@ func (u usersRepositoryDB) GetCustomerSummary(c *fiber.Ctx) (*ResponseReportBill
 	}
 
 	for _, tp := range timePeriods {
-		err := u.db.
+		 u.db.
 			Table("bills").
 			Joins("JOIN orders ON bills.id = orders.bill_id").
 			Joins("JOIN products ON orders.product_id = products.id").
+			Where("bills.status LIKE 'ปิด'").
 			Where("bills.created_at >= ?", tp.StartDate).
-			Pluck("SUM(bills.number)", tp.Field).Error
+			Pluck("SUM(bills.number)", &tp.Field)
 		// Count(tp.Field).Error
 
-		if err != nil {
-			return nil, err
-		}
+	
 	}
 
-	response := &ResponseReportBillCount{
+	response := &ResponseReportCustomerCount{
 		Data: customerCountResponse,
 	}
 
@@ -246,6 +245,7 @@ func (u usersRepositoryDB) GetCustomerAgeGroupSummary(c *fiber.Ctx) (*ResponseRe
 			err := u.db.
 				Table("bills").
 				Where("bills.created_at >= ?", tp.StartDate).
+				Where("bills.status LIKE 'ปิด'").
 				Where("bills.age_group_start >= ? AND bills.age_group_end <= ?", ageGroup.MinAge, ageGroup.MaxAge).
 				Count(tp.Field).Error
 
@@ -287,6 +287,7 @@ func (u usersRepositoryDB) GetCustomerGenderSummary(c *fiber.Ctx) (*ResponseRepo
 				Table("bills").
 				Joins("JOIN orders ON bills.id = orders.bill_id").
 				Joins("JOIN products ON orders.product_id = products.id").
+				Where("bills.status LIKE 'ปิด'").
 				Where("bills.created_at >= ?", tp.StartDate).
 				Where("bills.gender LIKE ?", gender).
 				Count(tp.Field).Error
@@ -380,6 +381,7 @@ func (u usersRepositoryDB) GetTop10Food(c *fiber.Ctx) (*ResponseReportMonthlyTop
 		Select("EXTRACT(MONTH FROM orders.created_at) as month, EXTRACT(YEAR FROM orders.created_at) as year, products.name as food_name, SUM(products.price) as total_sales").
 		Joins("JOIN products ON orders.product_id = products.id").
 		Where("orders.created_at >= ?", startDate).
+		Where("orders.status LIKE 'เสริฟอาหาร'").
 		Group("month, year, food_name").
 		Order("total_sales DESC").
 		Limit(10).

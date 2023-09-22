@@ -1,0 +1,2333 @@
+{
+	"info": {
+		"_postman_id": "7d1f9288-6788-4301-99a2-311a23e5d1f8",
+		"name": "api_restaurant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20545312"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "UserName",
+									"value": "boychawin2",
+									"type": "text"
+								},
+								{
+									"key": "PassWord",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "FirstName",
+									"value": "boy2",
+									"type": "text"
+								},
+								{
+									"key": "LastName",
+									"value": "chawin2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/users",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/users/",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								},
+								{
+									"key": "LastName",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/users/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{restaurantUrl}}/api/users/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "products",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "test2",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "test test",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/chawinhitakhun/Downloads/Screenshot 2023-09-20 at 09-09-09 Shopee Thailand ซื้อขายผ่านมือถือ หรือออนไลน์.png"
+								},
+								{
+									"key": "Price",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "CategoryID",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/products",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/products",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "test1",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "test test2",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/chawinhitakhun/Desktop/Screenshot 2566-09-17 at 11.18.20.png"
+								},
+								{
+									"key": "Price",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "CategoryID",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/products/2",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/products/3",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product-category",
+			"item": [
+				{
+					"name": "product/category",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CategoryName",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/product/category",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product/category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/product/category",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product/category",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CategoryName",
+									"value": "test2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/product/category/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product/category",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/product/category/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tables",
+			"item": [
+				{
+					"name": "tables",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Number",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "Status",
+									"value": "ว่าง",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/tables",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"tables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tables",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/tables/",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"tables",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tables",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Number",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "Status",
+									"value": "จอง",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/tables/2",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"tables",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tables",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/tables/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"tables",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservations",
+			"item": [
+				{
+					"name": "reservations",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CustomerName",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "TableID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/reservations",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reservations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/reservations",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reservations",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CustomerName",
+									"value": "ปิด",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/reservations/3",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reservations",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/reservations/2",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"reservations",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bills",
+			"item": [
+				{
+					"name": "bills",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "TableID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "Number",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "AgeGroup",
+									"value": "30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Gender",
+									"value": "ชาย",
+									"type": "text"
+								},
+								{
+									"key": "AgeGroupStart",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "AgeGroupEnd",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/bills",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"bills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bills",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/bills/",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"bills",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bills",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "TableID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "Number",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "AgeGroup",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "Gender",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/bills/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"bills",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bills",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/bills/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"bills",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "orders",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "BillID",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "ProductID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "Quantity",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "Status",
+									"value": "3333",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/orders",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/orders/",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Status",
+									"value": "เสริฟอาหาร",
+									"type": "text"
+								},
+								{
+									"key": "ProductID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "6",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "7",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/orders/7",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/orders/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "memberships",
+			"item": [
+				{
+					"name": "memberships",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CardNumber",
+									"value": "1234567890123",
+									"type": "text"
+								},
+								{
+									"key": "ExpiryDate",
+									"value": "2023-09-21",
+									"type": "text"
+								},
+								{
+									"key": "DiscountPercentage",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/memberships",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"memberships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "memberships",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/memberships",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"memberships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "memberships",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ExpiryDate",
+									"value": "2023-09-22",
+									"type": "text"
+								},
+								{
+									"key": "DiscountPercentage",
+									"value": "20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/memberships/2",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"memberships",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "memberships",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/memberships/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"memberships",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "report",
+			"item": [
+				{
+					"name": "report/total-amount-income",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/total-amount-income",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"total-amount-income"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report/product-category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/product-category",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"product-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report/bill-category-summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/bill-category-summary",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"bill-category-summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report/bill-summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/bill-summary",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"bill-summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report/customer-summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/customer-summary",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"customer-summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report/customer-age-group-summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/customer-age-group-summary",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"customer-age-group-summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report/customer-gender-summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/customer-gender-summary",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"customer-gender-summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report/repeat-customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/repeat-customers",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"repeat-customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report/top-10-food",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/report/top-10-food",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"top-10-food"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment system / bill check",
+			"item": [
+				{
+					"name": "Total payment amount of the entire bill",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CardNumber",
+									"value": "1234567890123",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/bills/check/2",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"bills",
+								"check",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Money paid and change shown",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Amount",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "CardNumber",
+									"value": "1234567890123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/bills/check/2",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"bills",
+								"check",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment has been made, closing the table / closing the bill.",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/bills/close/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"bills",
+								"close",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let res = pm.response.json()\r",
+							"let token = res.AccessToken\r",
+							"\r",
+							"pm.globals.set(\"oAuthToken\",token);\r",
+							"console.log(token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "boychawin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{restaurantUrl}}/api/login",
+					"host": [
+						"{{restaurantUrl}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reFresh",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{oAuthToken}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODUzNzE5NTgsImlzcyI6IjEiLCJzdWIiOiLguJjguLTguJTguLLguKPguLHguJXguJnguYwifQ.fEgGGkDufeq6psfiTfhnbUtY1gwB6bu1Gi5Cwa_cqVs",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host_virtualruns}}/api/refresh",
+					"host": [
+						"{{host_virtualruns}}"
+					],
+					"path": [
+						"api",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "session",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{oAuthToken}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host_virtualruns}}/api/session",
+					"host": [
+						"{{host_virtualruns}}"
+					],
+					"path": [
+						"api",
+						"session"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

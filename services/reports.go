@@ -51,7 +51,7 @@ func (s userService) GetBillSummary(c *fiber.Ctx) (*repositorys.ResponseReportBi
 	return response, nil
 }
 
-func (s userService) GetCustomerSummary(c *fiber.Ctx) (*repositorys.ResponseReportBillCount, error) {
+func (s userService) GetCustomerSummary(c *fiber.Ctx) (*repositorys.ResponseReportCustomerCount, error) {
 
 	response, err := s.userRepo.GetCustomerSummary(c)
 	if err != nil {

@@ -80,7 +80,7 @@ type UserService interface {
 	GetProductCategory(c *fiber.Ctx) (*repositorys.ResponseReportCategory, error)
 	GetBillCategorySummary(c *fiber.Ctx) (*repositorys.ResponseReportCategoryBillCount, error)
 	GetBillSummary(c *fiber.Ctx) (*repositorys.ResponseReportBillCount, error)
-	GetCustomerSummary(c *fiber.Ctx) (*repositorys.ResponseReportBillCount, error)
+	GetCustomerSummary(c *fiber.Ctx) (*repositorys.ResponseReportCustomerCount, error)
 	GetCustomerAgeGroupSummary(c *fiber.Ctx) (*repositorys.ResponseReportAgeGroupSummary, error)
 	GetCustomerGenderSummary(c *fiber.Ctx) (*repositorys.ResponseReportGenderSummary, error)
 	GetRepeatCustomers(c *fiber.Ctx) (*repositorys.ResponseReportCustomerRepeatVisits, error)

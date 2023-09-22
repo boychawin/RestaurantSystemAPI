@@ -84,7 +84,7 @@ type UsersRepository interface {
 	GetProductCategory(c *fiber.Ctx) (*ResponseReportCategory, error)
 	GetBillCategorySummary(c *fiber.Ctx) (*ResponseReportCategoryBillCount, error)
 	GetBillSummary(c *fiber.Ctx) (*ResponseReportBillCount, error)
-	GetCustomerSummary(c *fiber.Ctx) (*ResponseReportBillCount, error)
+	GetCustomerSummary(c *fiber.Ctx) (*ResponseReportCustomerCount, error)
 	GetCustomerAgeGroupSummary(c *fiber.Ctx) (*ResponseReportAgeGroupSummary, error)
 	GetCustomerGenderSummary(c *fiber.Ctx) (*ResponseReportGenderSummary, error)
 	GetRepeatCustomers(c *fiber.Ctx) (*ResponseReportCustomerRepeatVisits, error)
@@ -251,4 +251,16 @@ type CustomerRepeatVisits struct {
 type ResponseReportCustomerRepeatVisits struct {
 	Data     []CustomerRepeatVisits `json:"data"`
 	Messages string                 `json:"messages"`
+}
+
+type CustomerCount struct {
+	Last7DaysCount   int64
+	Last15DaysCount  int64
+	Last1MonthCount  int64
+	Last3MonthsCount int64
+}
+
+type ResponseReportCustomerCount struct {
+	Data     CustomerCount `json:"data"`
+	Messages string        `json:"messages"`
 }
