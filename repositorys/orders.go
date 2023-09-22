@@ -69,10 +69,6 @@ func (u usersRepositoryDB) GetOrders(c *fiber.Ctx) (*ResponseOrder, error) {
 
 func (u usersRepositoryDB) PutOrders(c *fiber.Ctx) (*ResponseOrder, error) {
 	Id := c.Params("id")
-
-	// claims := c.Locals("claims").(jwt.MapClaims)
-	// userId := claims["iss"].(string)
-
 	request := models.Order{}
 	orders := models.Order{}
 	err := c.BodyParser(&request)

@@ -22,7 +22,7 @@ func CreateTokens(user models.Users) (string, string, error) {
 		Subject:   user.FirstName,
 		// Id:        strconv.Itoa(int(user.ID)),
 		Audience:  user.Role,
-		ExpiresAt: time.Now().Add(time.Hour * 1).Unix(),
+		ExpiresAt: time.Now().Add(time.Hour * 24).Unix(),
 	}
 
 	accessToken := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)

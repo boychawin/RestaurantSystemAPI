@@ -100,7 +100,7 @@ func main() {
 	app.Get("api/report/bill-summary", utils.ValidateJWT(mainHandler.GetBillSummary))                           // สรุปข้อมูลบิลทั้งหมด
 	app.Get("api/report/customer-summary", utils.ValidateJWT(mainHandler.GetCustomerSummary))                   // สรุปข้อมูลลูกค้า
 	app.Get("api/report/customer-age-group-summary", utils.ValidateJWT(mainHandler.GetCustomerAgeGroupSummary)) // สรุปข้อมูลลูกค้า แยกตาม ช่วงอายุ
-	app.Get("api/report/customer-gender-summary", utils.ValidateJWT(mainHandler.GetCustomerAenderSummary))      // สรุปข้อมูลลูกค้า แยกตาม เพศ
+	app.Get("api/report/customer-gender-summary", utils.ValidateJWT(mainHandler.GetCustomerGenderSummary))      // สรุปข้อมูลลูกค้า แยกตาม เพศ
 	app.Get("api/report/repeat-customers", utils.ValidateJWT(mainHandler.GetRepeatCustomers))                   // รายชื่อลูกค้าที่เข้าซ้ำและจำนวนครั้งที่เข้าร้านทั้งหมดในช่วง 15 วัน, 1 เดือน, 3 เดือน, 6 เดือน, 12 เดือน
 	app.Get("api/report/top-10-food", utils.ValidateJWT(mainHandler.GetTop10Food))                              //รายการอาหาร top 10 ของร้านในแต่ละเดือน
 

@@ -60,8 +60,8 @@ func (h userHandler) GetCustomerAgeGroupSummary(c *fiber.Ctx) error {
 	return utils.GenerateResponse(c, response.Data,response.Messages, nil)
 }
 
-func (h userHandler) GetCustomerAenderSummary(c *fiber.Ctx) error {
-	response, err := h.userSrv.GetCustomerAenderSummary(c)
+func (h userHandler) GetCustomerGenderSummary(c *fiber.Ctx) error {
+	response, err := h.userSrv.GetCustomerGenderSummary(c)
 	if err != nil {
 		return utils.GenerateResponse(c, nil, "", err)
 	}

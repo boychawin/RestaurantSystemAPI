@@ -1,15 +1,15 @@
 package repositorys
 
 import (
+	"restaurant/errors"
+	"restaurant/models"
+	"restaurant/utils"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
-	"restaurant/errors"
-	"restaurant/models"
-	"restaurant/utils"
 )
-
 
 type usersRepositoryDB struct {
 	db *gorm.DB
@@ -31,7 +31,7 @@ func (u usersRepositoryDB) Session(c *fiber.Ctx) (*AuthResponse, error) {
 		if err == gorm.ErrRecordNotFound {
 			return nil, errors.NewUnexpectedError("ไม่พบข้อมูล")
 		}
-		// Other error occurred
+
 		return nil, errors.NewUnexpectedError("unexpected error")
 	}
 
@@ -53,10 +53,10 @@ func (u usersRepositoryDB) Refresh(c *fiber.Ctx) (*AuthResponse, error) {
 
 	if err != nil {
 		if err == gorm.ErrRecordNotFound {
-			// No user found with the  ID
+
 			return nil, errors.NewUnexpectedError("ไม่พบข้อมูล")
 		}
-		// Other error occurred
+
 		return nil, errors.NewUnexpectedError("unexpected error: " + err.Error())
 	}
 
@@ -73,8 +73,6 @@ func (u usersRepositoryDB) Refresh(c *fiber.Ctx) (*AuthResponse, error) {
 
 	return users, nil
 }
-
-
 
 func (u usersRepositoryDB) Login(c *fiber.Ctx) (*AuthResponse, error) {
 	request := SignupRequest{}
@@ -114,7 +112,6 @@ func (u usersRepositoryDB) Login(c *fiber.Ctx) (*AuthResponse, error) {
 	return users, err
 }
 
-
 func (u usersRepositoryDB) Register(c *fiber.Ctx) (*AuthResponse, error) {
 
 	request := models.Users{}
@@ -131,7 +128,7 @@ func (u usersRepositoryDB) Register(c *fiber.Ctx) (*AuthResponse, error) {
 	u.db.Model(&models.Users{}).Where("user_name = ?", request.UserName).Count(&count)
 
 	if count >= 1 {
-		
+
 		return nil, errors.NewUnexpectedError("มีข้อมูลแล้ว")
 	}
 
@@ -147,7 +144,7 @@ func (u usersRepositoryDB) Register(c *fiber.Ctx) (*AuthResponse, error) {
 		PassWord:  string(hashedPassword),
 		FirstName: request.FirstName,
 		LastName:  request.LastName,
-		Role:      "client", 
+		Role:      "client",
 	}
 
 	// Insert the user into the database

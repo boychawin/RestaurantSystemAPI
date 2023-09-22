@@ -77,14 +77,14 @@ type UserService interface {
 
 	/** Report **/
 	GetTotalAmountIncome(c *fiber.Ctx) (*repositorys.ResponseReport, error)
-	GetProductCategory(c *fiber.Ctx) (*repositorys.ResponseReport, error)
-	GetBillCategorySummary(c *fiber.Ctx) (*repositorys.ResponseReport, error)
-	GetBillSummary(c *fiber.Ctx) (*repositorys.ResponseReport, error)
-	GetCustomerSummary(c *fiber.Ctx) (*repositorys.ResponseReport, error)
-	GetCustomerAgeGroupSummary(c *fiber.Ctx) (*repositorys.ResponseReport, error)
-	GetCustomerAenderSummary(c *fiber.Ctx) (*repositorys.ResponseReport, error)
-	GetRepeatCustomers(c *fiber.Ctx) (*repositorys.ResponseReport, error)
-	GetTop10Food(c *fiber.Ctx) (*repositorys.ResponseReport, error)
+	GetProductCategory(c *fiber.Ctx) (*repositorys.ResponseReportCategory, error)
+	GetBillCategorySummary(c *fiber.Ctx) (*repositorys.ResponseReportCategoryBillCount, error)
+	GetBillSummary(c *fiber.Ctx) (*repositorys.ResponseReportBillCount, error)
+	GetCustomerSummary(c *fiber.Ctx) (*repositorys.ResponseReportBillCount, error)
+	GetCustomerAgeGroupSummary(c *fiber.Ctx) (*repositorys.ResponseReportAgeGroupSummary, error)
+	GetCustomerGenderSummary(c *fiber.Ctx) (*repositorys.ResponseReportGenderSummary, error)
+	GetRepeatCustomers(c *fiber.Ctx) (*repositorys.ResponseReportCustomerRepeatVisits, error)
+	GetTop10Food(c *fiber.Ctx) (*repositorys.ResponseReportMonthlyTopFood, error)
 }
 
 type DataResponseUsers struct {

@@ -23,13 +23,6 @@ func (u usersRepositoryDB) PostTables(c *fiber.Ctx) (*ResponseTable, error) {
 		return nil, errors.NewUnexpectedError("ต้องระบุฟิลด์ให้ครบ")
 	}
 
-	// var count int64
-	// u.db.Model(&models.Table{}).Where("category_name = ?", request.Number).Count(&count)
-
-	// if count >= 1 {
-	// 	return nil, errors.NewUnexpectedError("มีข้อมูลแล้ว")
-	// }
-
 	// Insert
 	tx := u.db.Create(&request)
 	if tx.Error != nil {

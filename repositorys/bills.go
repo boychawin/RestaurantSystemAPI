@@ -68,9 +68,6 @@ func (u usersRepositoryDB) GetBills(c *fiber.Ctx) (*ResponseBill, error) {
 func (u usersRepositoryDB) PutBills(c *fiber.Ctx) (*ResponseBill, error) {
 	Id := c.Params("id")
 
-	// claims := c.Locals("claims").(jwt.MapClaims)
-	// userId := claims["iss"].(string)
-
 	request := models.Bill{}
 	err := c.BodyParser(&request)
 	if err != nil {

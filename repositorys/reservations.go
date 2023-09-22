@@ -36,7 +36,7 @@ func (u usersRepositoryDB) PostReservations(c *fiber.Ctx) (*ResponseReservation,
 		return nil, errors.NewUnexpectedError(tx.Error.Error())
 	}
 	request2 := models.Table{}
-	request2.Status = "จอง" 
+	request2.Status = "จอง"
 	// Update Tables
 	tx = u.db.Where("id = ?", request.TableID).Updates(&request2)
 	if tx.Error != nil {
@@ -87,7 +87,7 @@ func (u usersRepositoryDB) PutReservations(c *fiber.Ctx) (*ResponseReservation, 
 		return nil, errors.NewUnexpectedError("รูปแบบไม่ถูกต้อง")
 	}
 
-	if request.CustomerName == "" ||Id == "" {
+	if request.CustomerName == "" || Id == "" {
 		return nil, errors.NewUnexpectedError("ต้องระบุฟิลด์ให้ครบ")
 	}
 

@@ -2,6 +2,7 @@ package repositorys
 
 import (
 	"restaurant/models"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -80,14 +81,14 @@ type UsersRepository interface {
 
 	/** Report **/
 	GetTotalAmountIncome(c *fiber.Ctx) (*ResponseReport, error)
-	GetProductCategory(c *fiber.Ctx) (*ResponseReport, error)
-	GetBillCategorySummary(c *fiber.Ctx) (*ResponseReport, error)
-	GetBillSummary(c *fiber.Ctx) (*ResponseReport, error)
-	GetCustomerSummary(c *fiber.Ctx) (*ResponseReport, error)
-	GetCustomerAgeGroupSummary(c *fiber.Ctx) (*ResponseReport, error)
-	GetCustomerAenderSummary(c *fiber.Ctx) (*ResponseReport, error)
-	GetRepeatCustomers(c *fiber.Ctx) (*ResponseReport, error)
-	GetTop10Food(c *fiber.Ctx) (*ResponseReport, error)
+	GetProductCategory(c *fiber.Ctx) (*ResponseReportCategory, error)
+	GetBillCategorySummary(c *fiber.Ctx) (*ResponseReportCategoryBillCount, error)
+	GetBillSummary(c *fiber.Ctx) (*ResponseReportBillCount, error)
+	GetCustomerSummary(c *fiber.Ctx) (*ResponseReportBillCount, error)
+	GetCustomerAgeGroupSummary(c *fiber.Ctx) (*ResponseReportAgeGroupSummary, error)
+	GetCustomerGenderSummary(c *fiber.Ctx) (*ResponseReportGenderSummary, error)
+	GetRepeatCustomers(c *fiber.Ctx) (*ResponseReportCustomerRepeatVisits, error)
+	GetTop10Food(c *fiber.Ctx) (*ResponseReportMonthlyTopFood, error)
 }
 
 type ResponseUsers struct {
@@ -149,7 +150,105 @@ type ResponseTable struct {
 	Messages string         `json:"messages"`
 }
 
+type RevenueResponse struct {
+	Last7DaysRevenue   float64
+	Last15DaysRevenue  float64
+	Last1MonthRevenue  float64
+	Last3MonthsRevenue float64
+}
+
 type ResponseReport struct {
-	Data     string `json:"data"`
-	Messages string `json:"messages"`
+	Data     *RevenueResponse `json:"data"`
+	Messages string           `json:"messages"`
+}
+
+type CategoryRevenueResponse struct {
+	CategoryName       string
+	Last7DaysRevenue   float64
+	Last15DaysRevenue  float64
+	Last1MonthRevenue  float64
+	Last3MonthsRevenue float64
+}
+
+type ResponseReportCategory struct {
+	Data     []CategoryRevenueResponse `json:"data"`
+	Messages string                    `json:"messages"`
+}
+
+type CategoryBillCount struct {
+	CategoryName     string
+	Last7DaysCount   int64
+	Last15DaysCount  int64
+	Last1MonthCount  int64
+	Last3MonthsCount int64
+}
+
+type ResponseReportCategoryBillCount struct {
+	Data     []CategoryBillCount `json:"data"`
+	Messages string              `json:"messages"`
+}
+
+type BillCount struct {
+	Last7DaysCount   int64
+	Last15DaysCount  int64
+	Last1MonthCount  int64
+	Last3MonthsCount int64
+}
+
+type ResponseReportBillCount struct {
+	Data     BillCount `json:"data"`
+	Messages string    `json:"messages"`
+}
+
+type GenderSummaryCount struct {
+	Gender           string
+	Last7DaysCount   int64
+	Last15DaysCount  int64
+	Last1MonthCount  int64
+	Last3MonthsCount int64
+}
+
+type ResponseReportGenderSummary struct {
+	Data     []GenderSummaryCount `json:"data"`
+	Messages string               `json:"messages"`
+}
+
+type AgeGroupSummaryCount struct {
+	AgeGroupStart    int
+	AgeGroupEnd      int
+	Last7DaysCount   int64
+	Last15DaysCount  int64
+	Last1MonthCount  int64
+	Last3MonthsCount int64
+}
+
+type ResponseReportAgeGroupSummary struct {
+	Data     []AgeGroupSummaryCount `json:"data"`
+	Messages string                 `json:"messages"`
+}
+
+type MonthlyTopFood struct {
+	Month      time.Month
+	Year       int
+	FoodName   string
+	TotalSales int
+}
+
+type ResponseReportMonthlyTopFood struct {
+	Data     []MonthlyTopFood `json:"data"`
+	Messages string           `json:"messages"`
+}
+
+type CustomerRepeatVisits struct {
+	CustomerName        string
+	TotalVisits15Days   int64
+	TotalVisits1Month   int64
+	TotalVisits3Months  int64
+	TotalVisits6Months  int64
+	TotalVisits12Months int64
+}
+
+type ResponseReportCustomerRepeatVisits struct {
+	Data     []CustomerRepeatVisits `json:"data"`
+	Messages string                 `json:"messages"`
 }

@@ -77,9 +77,6 @@ func (u usersRepositoryDB) GetCategory(c *fiber.Ctx) (*ResponseProductCategory, 
 func (u usersRepositoryDB) PutCategory(c *fiber.Ctx) (*ResponseProductCategory, error) {
 	Id := c.Params("id")
 
-	// claims := c.Locals("claims").(jwt.MapClaims)
-	// userId := claims["iss"].(string)
-
 	request := models.ProductCategory{}
 	err := c.BodyParser(&request)
 	if err != nil {
