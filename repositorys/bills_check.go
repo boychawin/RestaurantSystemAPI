@@ -3,6 +3,7 @@ package repositorys
 import (
 	"restaurant/errors"
 	"restaurant/models"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
@@ -40,14 +41,20 @@ func (u usersRepositoryDB) PostBillsCheck(c *fiber.Ctx) (*ResponseBillCheck, err
 	if request.CardNumber != "" {
 		u.db.Where("card_number LIKE ?", request.CardNumber).First(&membership)
 	}
-	if membership.DiscountPercentage != 0 {
+
+	expiryDate, err := time.Parse("2006-01-02T00:00:00Z", membership.ExpiryDate)
+	if err != nil {
+		return nil, errors.NewUnexpectedError(err.Error())
+	}
+
+	if membership.DiscountPercentage != 0 && expiryDate.After(time.Now()) {
 		request.DiscountPercentage = membership.DiscountPercentage
 
 		percentage := membership.DiscountPercentage / 100.0
 		totalAmount = percentage * bill.AmountPaid
 		totaldiscount = bill.AmountPaid - totalAmount
 
-	}else{
+	} else {
 		totaldiscount = bill.AmountPaid
 	}
 	// Calculate
@@ -109,8 +116,6 @@ func (u usersRepositoryDB) PostBillsClose(c *fiber.Ctx) (*ResponseBillCheck, err
 		return nil, errors.NewUnexpectedError(tx.Error.Error())
 	}
 
-
-
 	response := &ResponseBillCheck{
 		Data:     nil,
 		Messages: "",
@@ -151,17 +156,23 @@ func (u usersRepositoryDB) GetBillsCheck(c *fiber.Ctx) (*ResponseBillCheck, erro
 	if request.CardNumber != "" {
 		u.db.Where("card_number LIKE ?", request.CardNumber).First(&membership)
 	}
-	if membership.DiscountPercentage != 0 {
+
+	expiryDate, err := time.Parse("2006-01-02T00:00:00Z", membership.ExpiryDate)
+	if err != nil {
+		return nil, errors.NewUnexpectedError(err.Error())
+	}
+
+	if membership.DiscountPercentage != 0 && expiryDate.After(time.Now()) {
 		billCheck.DiscountPercentage = membership.DiscountPercentage
 
 		percentage := membership.DiscountPercentage / 100.0
 		totalAmount = percentage * totalQuantity
 		totaldiscount = totalQuantity - totalAmount
 
-	}else{
+	} else {
 		totaldiscount = totalQuantity
 	}
-	billCheck.CardNumber =request.CardNumber
+	billCheck.CardNumber = request.CardNumber
 	billCheck.ID = bill.ID
 	billCheck.TableID = bill.TableID
 	billCheck.Amount = totalQuantity

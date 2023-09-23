@@ -15,7 +15,6 @@ func (s userService) PostBills(c *fiber.Ctx) (*repositorys.ResponseBill, error) 
 	// Repository
 	response, err := s.userRepo.PostBills(c)
 	if err != nil {
-
 		return nil, errors.NewUnexpectedError(err.Error())
 	}
 	return response, nil

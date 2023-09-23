@@ -110,7 +110,8 @@ func (u usersRepositoryDB) PutProducts(c *fiber.Ctx) (*ResponseProduct, error) {
 		return nil, errors.NewUnexpectedError("ต้องระบุฟิลด์ให้ครบ")
 	}
 
-	request.ID = uint(userIdInt)
+	// request.ID = uint(Id)
+	// request.UserID = userIdInt
 
 	err = u.db.Where("id = ?", Id).First(&models.Product{}).Error
 	if err != nil {
@@ -127,10 +128,13 @@ func (u usersRepositoryDB) PutProducts(c *fiber.Ctx) (*ResponseProduct, error) {
 		request.ImageHash = image.MD5Hash
 	}
 	// Update
-	tx := u.db.Updates(&request)
+
+	tx := u.db.Model(&models.Product{}).Where("id = ?", Id).Updates(&request)
 	if tx.Error != nil {
 		return nil, errors.NewUnexpectedError(err.Error())
 	}
+
+
 
 	products := &ResponseProduct{
 		Data: nil,

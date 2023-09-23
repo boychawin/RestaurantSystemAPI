@@ -124,7 +124,7 @@ func (u usersRepositoryDB) DeleteReservations(c *fiber.Ctx) (*ResponseReservatio
 		}
 	}
 	// Update Table Status
-	tx := u.db.Model(&models.Table{}).Where("id = ?", reservation.TableID).Updates(&models.Table{Status: models.StatusEmpty}).Delete(&models.Reservation{}, Id)
+	tx := u.db.Model(&models.Table{}).Where("id = ?", reservation.TableID).Updates(&models.Table{Status: models.StatusEmpty})
 	if tx.Error != nil {
 		return nil, errors.NewUnexpectedError(tx.Error.Error())
 	}
