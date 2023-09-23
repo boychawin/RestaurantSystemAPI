@@ -25,7 +25,6 @@ func (u usersRepositoryDB) PostReservations(c *fiber.Ctx) (*ResponseReservation,
 
 	var count int64
 	u.db.Model(&models.Table{}).Where("id = ? AND status LIKE 'ว่าง' ", request.TableID).Count(&count)
-
 	if count != 1 {
 		return nil, errors.NewUnexpectedError("โต๊ะไม่ว่าง")
 	}
@@ -35,10 +34,10 @@ func (u usersRepositoryDB) PostReservations(c *fiber.Ctx) (*ResponseReservation,
 	if tx.Error != nil {
 		return nil, errors.NewUnexpectedError(tx.Error.Error())
 	}
-	request2 := models.Table{}
-	request2.Status = "จอง"
+	table := models.Table{}
+	table.Status = models.StatusReserved
 	// Update Tables
-	tx = u.db.Where("id = ?", request.TableID).Updates(&request2)
+	tx = u.db.Where("id = ?", request.TableID).Updates(&table)
 	if tx.Error != nil {
 		return nil, errors.NewUnexpectedError(err.Error())
 	}
@@ -91,7 +90,7 @@ func (u usersRepositoryDB) PutReservations(c *fiber.Ctx) (*ResponseReservation, 
 		return nil, errors.NewUnexpectedError("ต้องระบุฟิลด์ให้ครบ")
 	}
 
-	err = u.db.Where("id = ? AND ", Id).First(&models.Reservation{}).Error
+	err = u.db.Where("id = ?", Id).First(&models.Reservation{}).Error
 	if err != nil {
 		if err == gorm.ErrRecordNotFound {
 			return nil, errors.NewUnexpectedError("ไม่พบข้อมูล")
@@ -117,15 +116,21 @@ func (u usersRepositoryDB) DeleteReservations(c *fiber.Ctx) (*ResponseReservatio
 		return nil, errors.NewUnexpectedError("ต้องระบุฟิลด์ให้ครบ")
 	}
 
-	err := u.db.Where("id = ?", Id).First(&models.Reservation{}).Error
-
+	reservation := models.Reservation{}
+	err := u.db.Where("id = ?", Id).First(&reservation).Error
 	if err != nil {
 		if err == gorm.ErrRecordNotFound {
 			return nil, errors.NewUnexpectedError("ไม่พบข้อมูล")
 		}
 	}
+	// Update Table Status
+	tx := u.db.Model(&models.Table{}).Where("id = ?", reservation.TableID).Updates(&models.Table{Status: models.StatusEmpty}).Delete(&models.Reservation{}, Id)
+	if tx.Error != nil {
+		return nil, errors.NewUnexpectedError(tx.Error.Error())
+	}
+
 	// Delete
-	tx := u.db.Delete(&models.Reservation{}, Id)
+	tx = u.db.Delete(&models.Reservation{}, Id)
 	if tx.Error != nil {
 		return nil, errors.NewUnexpectedError(err.Error())
 	}

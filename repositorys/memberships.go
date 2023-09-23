@@ -34,7 +34,6 @@ func (u usersRepositoryDB) PostMemberships(c *fiber.Ctx) (*ResponseMembership, e
 
 	var count int64
 	u.db.Model(&models.Membership{}).Where("card_number = ?", request.CardNumber).Count(&count)
-
 	if count >= 1 {
 		return nil, errors.NewUnexpectedError("มีข้อมูลแล้ว")
 	}
@@ -42,7 +41,9 @@ func (u usersRepositoryDB) PostMemberships(c *fiber.Ctx) (*ResponseMembership, e
 	if err != nil {
 		return nil, errors.NewUnexpectedError(err.Error())
 	}
-
+	if expiryDate.Before(time.Now()) {
+		return nil, errors.NewUnexpectedError("ExpiryDate ต้องมากกว่าวันปัจจุบัน")
+	}
 	request.ExpiryDate = expiryDate.Format("2006-01-02")
 	request.UserID = userIdInt
 	// Insert
@@ -117,6 +118,11 @@ func (u usersRepositoryDB) PutMemberships(c *fiber.Ctx) (*ResponseMembership, er
 	if err != nil {
 		return nil, errors.NewUnexpectedError(err.Error())
 	}
+
+	if expiryDate.Before(time.Now()) {
+		return nil, errors.NewUnexpectedError("ExpiryDate ต้องมากกว่าวันปัจจุบัน")
+	}
+	
 
 	request.ExpiryDate = expiryDate.Format("2006-01-02")
 	request.UserID = userIdInt

@@ -7,13 +7,13 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func Orderservice(userRepo repositorys.UsersRepository) UserService {
+func OrderCycleservice(userRepo repositorys.UsersRepository) UserService {
 	return userService{userRepo}
 }
 
-func (s userService) PostOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error) {
+func (s userService) PostOrderCycle(c *fiber.Ctx) (*repositorys.ResponseOrderCycle, error) {
 	// Repository
-	response, err := s.userRepo.PostOrders(c)
+	response, err := s.userRepo.PostOrderCycle(c)
 	if err != nil {
 
 		return nil, errors.NewUnexpectedError(err.Error())
@@ -21,8 +21,8 @@ func (s userService) PostOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error
 	return response, nil
 }
 
-func (s userService) GetOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error) {
-	response, err := s.userRepo.GetOrders(c)
+func (s userService) GetOrdersCycle(c *fiber.Ctx) (*repositorys.ResponseOrderCycle, error) {
+	response, err := s.userRepo.GetOrdersCycle(c)
 	if err != nil {
 
 		return nil, errors.NewUnexpectedError(err.Error())
@@ -30,8 +30,8 @@ func (s userService) GetOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error)
 	return response, nil
 }
 
-func (s userService) PutOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error) {
-	response, err := s.userRepo.PutOrders(c)
+func (s userService) PutOrdersCycle(c *fiber.Ctx) (*repositorys.ResponseOrderCycle, error) {
+	response, err := s.userRepo.PutOrdersCycle(c)
 	if err != nil {
 
 		return nil, errors.NewUnexpectedError(err.Error())
@@ -39,8 +39,8 @@ func (s userService) PutOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error)
 	return response, nil
 }
 
-func (s userService) DeleteOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error) {
-	response, err := s.userRepo.DeleteOrders(c)
+func (s userService) DeleteOrdersCycle(c *fiber.Ctx) (*repositorys.ResponseOrderCycle, error) {
+	response, err := s.userRepo.DeleteOrdersCycle(c)
 	if err != nil {
 
 		return nil, errors.NewUnexpectedError(err.Error())

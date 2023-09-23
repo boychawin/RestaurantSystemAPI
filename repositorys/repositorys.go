@@ -67,7 +67,12 @@ type UsersRepository interface {
 	PostBillsClose(c *fiber.Ctx) (*ResponseBillCheck, error)
 	GetBillsCheck(c *fiber.Ctx) (*ResponseBillCheck, error)
 
-	/** Order **/
+	/** Order Cycle**/
+	PostOrderCycle(c *fiber.Ctx) (*ResponseOrderCycle, error)
+	GetOrdersCycle(c *fiber.Ctx) (*ResponseOrderCycle, error)
+	PutOrdersCycle(c *fiber.Ctx) (*ResponseOrderCycle, error)
+	DeleteOrdersCycle(c *fiber.Ctx) (*ResponseOrderCycle, error)
+	/** Order Items **/
 	PostOrders(c *fiber.Ctx) (*ResponseOrder, error)
 	GetOrders(c *fiber.Ctx) (*ResponseOrder, error)
 	PutOrders(c *fiber.Ctx) (*ResponseOrder, error)
@@ -130,10 +135,19 @@ type ResponseBillCheck struct {
 	Messages string                 `json:"messages"`
 }
 
+
+type ResponseOrderCycle struct {
+	Data     []models.OrderCycle `json:"data"`
+	Messages string         `json:"messages"`
+}
+
+
+
 type ResponseOrder struct {
 	Data     []models.Order `json:"data"`
 	Messages string         `json:"messages"`
 }
+
 
 type ResponseMembership struct {
 	Data     []models.Membership `json:"data"`

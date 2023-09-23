@@ -75,11 +75,18 @@ func main() {
 	app.Delete("api/bills/:id", utils.ValidateJWT(mainHandler.DeleteBills)) //  ปิดบิลด้วย ID (ชำระเงิน)
 
 	/** Order **/
-	app.Post("api/orders", utils.ValidateJWT(mainHandler.PostOrders))
-	app.Get("api/orders", utils.ValidateJWT(mainHandler.GetOrders))
-	app.Get("api/orders/:id", utils.ValidateJWT(mainHandler.GetOrders))
-	app.Put("api/orders/:id", utils.ValidateJWT(mainHandler.PutOrders))
-	app.Delete("api/orders/:id", utils.ValidateJWT(mainHandler.DeleteOrders))
+	app.Post("api/orders", utils.ValidateJWT(mainHandler.PostOrderCycle))
+	app.Get("api/orders", utils.ValidateJWT(mainHandler.GetOrdersCycle))
+	app.Get("api/orders/:id", utils.ValidateJWT(mainHandler.GetOrdersCycle))
+	app.Put("api/orders/:id", utils.ValidateJWT(mainHandler.PutOrdersCycle))
+	app.Delete("api/orders/:id", utils.ValidateJWT(mainHandler.DeleteOrdersCycle))
+
+	/** Order Iitems**/
+	app.Post("api/order-items", utils.ValidateJWT(mainHandler.PostOrders))
+	app.Get("api/order-items", utils.ValidateJWT(mainHandler.GetOrders))
+	app.Get("api/order-items/:id", utils.ValidateJWT(mainHandler.GetOrders))
+	app.Put("api/order-items/:id", utils.ValidateJWT(mainHandler.PutOrders))
+	app.Delete("api/order-items/:id", utils.ValidateJWT(mainHandler.DeleteOrders))
 
 	/** Membership **/
 	app.Post("api/memberships", utils.ValidateJWT(mainHandler.PostMemberships)) // สมัครสมาชิกใหม่

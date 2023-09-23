@@ -62,8 +62,12 @@ type UserService interface {
 	PostBillsCheck(c *fiber.Ctx) (*repositorys.ResponseBillCheck, error)
 	PostBillsClose(c *fiber.Ctx) (*repositorys.ResponseBillCheck, error)
 	GetBillsCheck(c *fiber.Ctx) (*repositorys.ResponseBillCheck, error)
-
-	/** Order **/
+	/** Order Cycle**/
+	PostOrderCycle(c *fiber.Ctx) (*repositorys.ResponseOrderCycle, error)
+	GetOrdersCycle(c *fiber.Ctx) (*repositorys.ResponseOrderCycle, error)
+	PutOrdersCycle(c *fiber.Ctx) (*repositorys.ResponseOrderCycle, error)
+	DeleteOrdersCycle(c *fiber.Ctx) (*repositorys.ResponseOrderCycle, error)
+	/** Order Items **/
 	PostOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error)
 	GetOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error)
 	PutOrders(c *fiber.Ctx) (*repositorys.ResponseOrder, error)

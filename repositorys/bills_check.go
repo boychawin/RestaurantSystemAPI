@@ -109,6 +109,8 @@ func (u usersRepositoryDB) PostBillsClose(c *fiber.Ctx) (*ResponseBillCheck, err
 		return nil, errors.NewUnexpectedError(tx.Error.Error())
 	}
 
+
+
 	response := &ResponseBillCheck{
 		Data:     nil,
 		Messages: "",

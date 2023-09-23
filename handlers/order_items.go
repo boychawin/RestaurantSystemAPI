@@ -7,20 +7,20 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func OrderCycleHandler(userSrv services.UserService) userHandler {
+func OrderHandler(userSrv services.UserService) userHandler {
 	return userHandler{userSrv}
 }
 
-func (h userHandler) PostOrderCycle(c *fiber.Ctx) error {
-	response, err := h.userSrv.PostOrderCycle(c)
+func (h userHandler) PostOrders(c *fiber.Ctx) error {
+	response, err := h.userSrv.PostOrders(c)
 	if err != nil {
 		return utils.GenerateResponse(c, nil, "", err)
 	}
 	return utils.GenerateResponse(c, response.Data,response.Messages, nil)
 }
 
-func (h userHandler) GetOrdersCycle(c *fiber.Ctx) error {
-	response, err := h.userSrv.GetOrdersCycle(c)
+func (h userHandler) GetOrders(c *fiber.Ctx) error {
+	response, err := h.userSrv.GetOrders(c)
 	if err != nil {
 		return utils.GenerateResponse(c, nil, "", err)
 	}
@@ -28,16 +28,16 @@ func (h userHandler) GetOrdersCycle(c *fiber.Ctx) error {
 }
 
 
-func (h userHandler) PutOrdersCycle(c *fiber.Ctx) error {
-	response, err := h.userSrv.PutOrdersCycle(c)
+func (h userHandler) PutOrders(c *fiber.Ctx) error {
+	response, err := h.userSrv.PutOrders(c)
 	if err != nil {
 		return utils.GenerateResponse(c, nil, "", err)
 	}
 	return utils.GenerateResponse(c, response.Data,response.Messages, nil)
 }
 
-func (h userHandler) DeleteOrdersCycle(c *fiber.Ctx) error {
-	response, err := h.userSrv.DeleteOrdersCycle(c)
+func (h userHandler) DeleteOrders(c *fiber.Ctx) error {
+	response, err := h.userSrv.DeleteOrders(c)
 	if err != nil {
 		return utils.GenerateResponse(c, nil, "", err)
 	}

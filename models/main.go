@@ -93,10 +93,17 @@ const (
 
 type Order struct {
 	gorm.Model
-	ID        uint
-	BillID    int
-	ProductID int
-	Status    OrderStatus
+	ID           uint
+	OrderCycleID int
+	BillID       int
+	ProductID    int
+	Status       OrderStatus
+}
+
+type OrderCycle struct {
+	gorm.Model
+	ID     uint
+	BillID int
 }
 
 type Membership struct {

@@ -59,7 +59,7 @@ func InitDatabase() *gorm.DB {
 	fmt.Println("Database connection established successfully")
 
 	db.AutoMigrate(models.Users{}, models.Table{}, models.Reservation{}, models.ProductCategory{}, models.Product{},
-		models.Order{}, models.Membership{}, models.Bill{})
+		models.Order{},models.OrderCycle{}, models.Membership{}, models.Bill{})
 	return db
 }
 
