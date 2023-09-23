@@ -44,12 +44,12 @@
 								},
 								{
 									"key": "FirstName",
-									"value": "boy2",
+									"value": "boy",
 									"type": "text"
 								},
 								{
 									"key": "LastName",
-									"value": "chawin2",
+									"value": "chawin",
 									"type": "text"
 								}
 							]
@@ -144,7 +144,7 @@
 								},
 								{
 									"key": "LastName",
-									"value": "2",
+									"value": "chawin",
 									"type": "text"
 								}
 							]
@@ -184,14 +184,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{restaurantUrl}}/api/users/1",
+							"raw": "{{restaurantUrl}}/api/users/2",
 							"host": [
 								"{{restaurantUrl}}"
 							],
 							"path": [
 								"api",
 								"users",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -227,22 +227,22 @@
 							"formdata": [
 								{
 									"key": "Name",
-									"value": "test2",
+									"value": "ลาบ",
 									"type": "text"
 								},
 								{
 									"key": "Description",
-									"value": "test test",
+									"value": "เป็นอาหารปรุงมาจากการทำตำส้ม คือการทำให้เปรี้ยว ในลาวจะเรียกว่าตำหมากหุ่ง ปรุงโดยนำมะละกอดิบที่สับแล้วฝานหรือขูดเป็นเส้นมาตำในครกเป็นหลัก พร้อมด้วยวัตถุดิบอื่น ๆ คือ มะเขือเทศลูกเล็ก ",
 									"type": "text"
 								},
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/chawinhitakhun/Downloads/Screenshot 2023-09-20 at 09-09-09 Shopee Thailand ซื้อขายผ่านมือถือ หรือออนไลน์.png"
+									"src": "/Users/chawinhitakhun/Downloads/ลาบ.png"
 								},
 								{
 									"key": "Price",
-									"value": "1",
+									"value": "25",
 									"type": "text"
 								},
 								{
@@ -337,22 +337,22 @@
 							"formdata": [
 								{
 									"key": "Name",
-									"value": "test1",
+									"value": "สัมตำ",
 									"type": "text"
 								},
 								{
 									"key": "Description",
-									"value": "test test2",
+									"value": "ลาบ เป็นวิธีการปรุงอาหารประเภทหนึ่ง จากการใช้เนื้อสัตว์สับละเอียด นำไปปรุงกับเครื่องปรุงต่าง ๆ เพื่อสร้างรสชาติ โดยเรียกชื่อตามชนิดของเนื้อสัตว์ ทั้งนี้ลาบเป็นอาหารพื้น",
 									"type": "text"
 								},
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/chawinhitakhun/Desktop/Screenshot 2566-09-17 at 11.18.20.png"
+									"src": "/Users/chawinhitakhun/Downloads/Som_tam_pu.jpg"
 								},
 								{
 									"key": "Price",
-									"value": "2",
+									"value": "30",
 									"type": "text"
 								},
 								{
@@ -363,14 +363,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/products/2",
+							"raw": "{{restaurantUrl}}/api/products/1",
 							"host": [
 								"{{restaurantUrl}}"
 							],
 							"path": [
 								"api",
 								"products",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -450,7 +450,7 @@
 							"formdata": [
 								{
 									"key": "CategoryName",
-									"value": "test",
+									"value": "ของหวาน",
 									"type": "text"
 								}
 							]
@@ -542,7 +542,7 @@
 							"formdata": [
 								{
 									"key": "CategoryName",
-									"value": "test2",
+									"value": "ขนม",
 									"type": "text"
 								}
 							]
@@ -593,7 +593,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/product/category/1",
+							"raw": "{{restaurantUrl}}/api/product/category/6",
 							"host": [
 								"{{restaurantUrl}}"
 							],
@@ -601,7 +601,7 @@
 								"api",
 								"product",
 								"category",
-								"1"
+								"6"
 							]
 						}
 					},
@@ -637,7 +637,7 @@
 							"formdata": [
 								{
 									"key": "Number",
-									"value": "6",
+									"value": "3",
 									"type": "text"
 								},
 								{
@@ -733,12 +733,12 @@
 							"formdata": [
 								{
 									"key": "Number",
-									"value": "3",
+									"value": "4",
 									"type": "text"
 								},
 								{
 									"key": "Status",
-									"value": "จอง",
+									"value": "ว่าง",
 									"type": "text"
 								}
 							]
@@ -788,14 +788,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/tables/1",
+							"raw": "{{restaurantUrl}}/api/tables/3",
 							"host": [
 								"{{restaurantUrl}}"
 							],
 							"path": [
 								"api",
 								"tables",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -831,12 +831,12 @@
 							"formdata": [
 								{
 									"key": "CustomerName",
-									"value": "test",
+									"value": "ลูกค้า2",
 									"type": "text"
 								},
 								{
 									"key": "TableID",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								},
 								{
@@ -932,20 +932,20 @@
 							"formdata": [
 								{
 									"key": "CustomerName",
-									"value": "ปิด",
+									"value": "ลูกค้า2",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/reservations/3",
+							"raw": "{{restaurantUrl}}/api/reservations/2",
 							"host": [
 								"{{restaurantUrl}}"
 							],
 							"path": [
 								"api",
 								"reservations",
-								"3"
+								"2"
 							]
 						}
 					},
@@ -1025,12 +1025,12 @@
 							"formdata": [
 								{
 									"key": "TableID",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								},
 								{
 									"key": "Number",
-									"value": "6",
+									"value": "5",
 									"type": "text"
 								},
 								{
@@ -1046,12 +1046,12 @@
 								},
 								{
 									"key": "AgeGroupStart",
-									"value": "1",
+									"value": "15",
 									"type": "text"
 								},
 								{
 									"key": "AgeGroupEnd",
-									"value": "12",
+									"value": "18",
 									"type": "text"
 								}
 							]
@@ -1152,12 +1152,23 @@
 								},
 								{
 									"key": "AgeGroup",
-									"value": "6",
-									"type": "text"
+									"value": "20",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "Gender",
-									"value": "7",
+									"value": "หญิง",
+									"type": "text"
+								},
+								{
+									"key": "AgeGroupStart",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "AgeGroupEnd",
+									"value": "29",
 									"type": "text"
 								}
 							]
@@ -1207,14 +1218,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/bills/1",
+							"raw": "{{restaurantUrl}}/api/bills/4",
 							"host": [
 								"{{restaurantUrl}}"
 							],
 							"path": [
 								"api",
 								"bills",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -1223,7 +1234,7 @@
 			]
 		},
 		{
-			"name": "orders",
+			"name": "order",
 			"item": [
 				{
 					"name": "orders",
@@ -1250,13 +1261,14 @@
 							"formdata": [
 								{
 									"key": "BillID",
-									"value": "5",
+									"value": "2",
 									"type": "text"
 								},
 								{
 									"key": "ProductID",
 									"value": "1",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "Quantity",
@@ -1356,14 +1368,15 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "Status",
-									"value": "เสริฟอาหาร",
+									"key": "BillID",
+									"value": "5",
 									"type": "text"
 								},
 								{
 									"key": "ProductID",
 									"value": "1",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "",
@@ -1380,14 +1393,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/orders/7",
+							"raw": "{{restaurantUrl}}/api/orders/1",
 							"host": [
 								"{{restaurantUrl}}"
 							],
 							"path": [
 								"api",
 								"orders",
-								"7"
+								"1"
 							]
 						}
 					},
@@ -1440,6 +1453,222 @@
 			]
 		},
 		{
+			"name": "orderItem",
+			"item": [
+				{
+					"name": "orderItem",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "BillID",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "ProductID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "OrderCycleID",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "Status",
+									"value": "3333",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/order-items",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"order-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderItem",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/order-items/",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"order-items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderItem",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Status",
+									"value": "เสริฟอาหาร",
+									"type": "text"
+								},
+								{
+									"key": "ProductID",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "6",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "7",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/order-items/3",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"order-items",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderItem",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{oAuthToken}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "boy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{restaurantUrl}}/api/order-items/1",
+							"host": [
+								"{{restaurantUrl}}"
+							],
+							"path": [
+								"api",
+								"order-items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "memberships",
 			"item": [
 				{
@@ -1472,7 +1701,7 @@
 								},
 								{
 									"key": "ExpiryDate",
-									"value": "2023-09-21",
+									"value": "2023-09-24",
 									"type": "text"
 								},
 								{
@@ -1578,14 +1807,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/memberships/2",
+							"raw": "{{restaurantUrl}}/api/memberships/1",
 							"host": [
 								"{{restaurantUrl}}"
 							],
 							"path": [
 								"api",
 								"memberships",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -1622,14 +1851,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/memberships/1",
+							"raw": "{{restaurantUrl}}/api/memberships/2",
 							"host": [
 								"{{restaurantUrl}}"
 							],
 							"path": [
 								"api",
 								"memberships",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -2097,8 +2326,7 @@
 								{
 									"key": "CardNumber",
 									"value": "1234567890123",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								}
 							]
 						},
@@ -2142,7 +2370,7 @@
 							"formdata": [
 								{
 									"key": "Amount",
-									"value": "12",
+									"value": "100",
 									"type": "text"
 								},
 								{
@@ -2192,7 +2420,7 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{restaurantUrl}}/api/bills/close/1",
+							"raw": "{{restaurantUrl}}/api/bills/close/2",
 							"host": [
 								"{{restaurantUrl}}"
 							],
@@ -2200,7 +2428,7 @@
 								"api",
 								"bills",
 								"close",
-								"1"
+								"2"
 							]
 						}
 					},
